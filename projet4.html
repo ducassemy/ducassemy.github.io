@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effigie - Niveau 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Effigie</h1>
+            <p>Niveau 4</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/ducassemy" target="_blank">
+                        <img src="img/87390.png" alt="Instagram" class="instagram-icon">
+                    </a>
+                </div>
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+                        body {
+                            font-family: 'Press Start 2P', cursive;
+                        }
+
+                        .game-header h1, .game-header p, .project-description h2, .project-description p, .site-footer p {
+                            font-family: 'Press Start 2P', cursive;
+                        }
+                    </style>
+                
+            <h3><a href="index.html" class="home-link">accueil</a></h3>
+            <style>
+                .home-link {
+                    color: rgb(255, 255, 0);
+                    text-decoration: none;
+                    font-family: 'Press Start 2P', cursive;
+                }
+
+                .home-link:hover {
+                    text-decoration: underline;
+                }
+            </style>
+        </header>
+        <style>
+            body {
+                background-image: url('img/effigie9\ -\ Moyenne.jpeg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                
+            }
+        </style>
+
+        <style>
+            .game-header {
+                margin-bottom: 20px;
+            }
+        </style>
+ 
+    
+                    <div class="project-description"> <h2>Revue typographique</h2>
+                    <p>Effigie est une revue qui met en lumière le travail d’un seul photographe par édition. Pensée comme une plongée immersive dans l’univers visuel de l’artiste, chaque numéro devient une monographie soigneusement conçue, offrant au lecteur une expérience intime et approfondie.
+                    </p>
+                </div>
+
+                
+                <style>
+                    .project-description {
+                        margin-bottom: 50px;
+                    }
+                </style>
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="img/effigie1 - Moyenne.jpeg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/effigie2 - Moyenne.jpeg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/effigie3 - Moyenne.jpeg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/effigie4 - Moyenne.jpeg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/effigie5 - Moyenne.jpeg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/effigie6 - Moyenne.jpeg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/effigie7 - Moyenne.jpeg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/effigie8 - Moyenne.jpeg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/effigie9 - Moyenne.jpeg" style="width:80%">
+            </div>
+           
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <style>
+            .slideshow-container {
+                position: relative;
+                max-width: 100%;
+                margin: auto;
+            }
+
+            .mySlides {
+                display: none;
+            }
+
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+            .fade {
+                animation-name: fade;
+                animation-duration: 1s;
+            }
+
+            @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+        </style>
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+            function positionArrows() {
+                let prev = document.querySelector('.prev');
+                let next = document.querySelector('.next');
+                prev.style.left = '0';
+                next.style.right = '0';
+            }
+
+            positionArrows();
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                if (n > slides.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slides[slideIndex-1].style.display = "block";  
+            }
+        </script>
+
+
+    <footer class="site-footer">
+        <p> 2024 Emy Ducasse - Portfolio</p>
+    </footer>
+
+    <style>
+        .slideshow-container {
+            margin-bottom: 50px;
+        }
+    </style>
+
+    <style>
+        .page-projet img {
+            max-width: 50%;
+            height: auto;
+        }
+    </style>
+
+
+</body>
+</html>
