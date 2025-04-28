@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overscroll-behavior: none;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;
+    }
+
+    header {
+      margin-bottom: 20px;
+      text-align: left;
+      padding-left: 20px; 
+    }
+
+    .projets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 30px; 
+}
+
+
+
+    .projets.fixed {
+      position: fixed;
+      top: 100px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .fixed {
+      position: fixed;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      min-height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 48px;
+      color: white;
+      z-index: 9999;
+    }
+
+    .close {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      background: #b4ee14;
+      color: #000;
+      font-size: 48px;
+      text-align: center;
+      line-height: 48px;
+      border-radius: 24px;
+      cursor: pointer;
+    }
+
+    
+    .scroll-progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .scroll-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #b4ee14;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      transition: width 0.1s ease-out;
+    }
+
+    
+    .typewriter {
+      display: inline-block;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 24px;
+      color: #000;
+      white-space: nowrap; 
+      overflow: hidden; 
+      border-right: 3px solid #b4ee14;
+      padding-right: 5px;
+      animation: typing 5s steps(20) 1s 1 normal both, blink 1s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 20%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #b4ee14; }
+    }
+
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #b4ee14;
+      color: black;
+      text-align: center;
+      padding: 10px 1;
+      font-weight: bold;
+      font-size: 12px;
+      cursor: pointer;
+      z-index: 9999;
+      display: none; 
+    }
+
+    .back-to-top:hover {
+      background-color: #a0d514;
+    }
+
+    .header-content {
+  display: flex;
+  justify-content: space-between; /* Un espace entre ton nom et ton lien */
+  align-items: center;
+  padding: 0 20px;
+}
+
+.about a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.about a:hover {
+  color: #b4ee14; /* Change la couleur au survol */
+}
+
+/* La section À propos */
+#about-section {
+  margin-top: 100px;
+  padding: 20px;
+}
+/* Fenêtre À propos */
+#aboutModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.335);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.about-content {
+  background:#b4ee14;
+ color: black;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 80%;
+  text-align: center;
+  font-size: 16px ;
+}
+
+
+#closeAbout {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 36px;
+  cursor: pointer;
+  background: #b4ee14;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  border-radius: 50%;
+}
+
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <div class="scroll-progress-container">
+    <div class="scroll-progress"></div>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <h1 class="typewriter">EMY DUCASSE</h1>
+        <nav class="about">
+          <a href="#" id="openAbout">À propos</a>
+        </nav>
+      </div>
+    </header>
+    
+    
+
+    <div class="projets"></div>
+  </div>
+
+  
+  <div id="backToTop" class="back-to-top">
+    <p>start</p>
+  </div>
+  <div id="aboutModal" class="overlay" style="display: none;">
+    <div class="about-content">
+      <span id="closeAbout" class="close">&times;</span>
+      <h2>À propos</h2>
+      <p>Bonjour, je m'appelle Emy Ducasse.
+        Je suis actuellement étudiante en deuxième année à l'École Supérieure d'Art et de Design à Amiens.
+        Je travaille et j'expérimente autour de la création d'identités visuelles, d'affiches, d'éditions et de supports numériques.
+        </p>
+    </div>
+  </div>
+  
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0"></script>
+  <script type="module" src="main.js"></script>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPosition = window.scrollY;
+      let scrollPercentage = (scrollPosition / scrollHeight) * 100;
+      scrollPercentage = Math.min(Math.max(scrollPercentage, 0), 100);
+
+      const progressBar = document.querySelector('.scroll-progress');
+      progressBar.style.width = `${scrollPercentage}%`;
+      progressBar.textContent = `${Math.round(scrollPercentage)}%`;
+
+      const backToTop = document.getElementById('backToTop');
+      if (scrollPosition > 1400) { 
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+
+    
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.getElementById('openAbout').addEventListener('click', function(event) {
+  event.preventDefault(); // empêche le scroll en cliquant
+  document.getElementById('aboutModal').style.display = 'flex';
+});
+
+document.getElementById('closeAbout').addEventListener('click', function() {
+  document.getElementById('aboutModal').style.display = 'none';
+});
+
+  </script>
+
+</body>
+</html>
